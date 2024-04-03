@@ -34,7 +34,7 @@
                 </p>
               </div>
 
-              <div class="grid grid-cols-3 gap-4 pt-2">
+              <div class="grid grid-cols-2 gap-4 pt-2">
                 <div class="grid gap-2">
                   <label
                     class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -86,7 +86,7 @@
                   <textarea
                     required
                     rows="10"
-                    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 font-mono"
+                    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 font-mono px-3"
                     id="input-data"
                   ></textarea>
                 </div>
@@ -162,6 +162,29 @@
                     Entrenar
                   </button>
                 </div>
+              </div>
+              <div>
+                <span
+                  class="inline-flex items-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md justify-start"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="h-4 w-4 text-muted-foreground mr-2"
+                  >
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg
+                  >Tiempo de entrenamiento</span
+                >
+                <input
+                  required
+                  class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground text-black focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  id="performance"
+                  readonly
+                />
               </div>
               <div>
                 <span
