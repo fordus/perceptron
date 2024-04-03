@@ -12,6 +12,7 @@ const $output = document.querySelector('#output')
 const $resultWeights = document.querySelector('#result-weights')
 const $clearData = document.querySelector('#clear-data')
 const $trainPerceptron = document.querySelector('#train-perceptron')
+const $performance = document.querySelector('#performance')
 
 /**
  * Clear data event listener
@@ -75,6 +76,7 @@ initializeValues()
  * Trains the perceptron with the values entered by the user.
  */
 $trainPerceptron.addEventListener('click', () => {
+  const t0 = performance.now() // start time
   const epochs = parseInt($epochs.value)
   const learningRate = parseFloat($learningRate.value)
   const values = $inputData.value
@@ -97,5 +99,6 @@ $trainPerceptron.addEventListener('click', () => {
   $resultWeights.value = weightsTrained.map(value => value.join(' ')).join('\n')
   const output = checkPerceptron(values, weightsTrained, desiredOutput)
   $output.value = output
-  console.log('Output:', output)
+  const t1 = performance.now() // end time
+  $performance.value = `${t1 - t0} ms`
 })
