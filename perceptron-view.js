@@ -1,4 +1,15 @@
 import { perceptron, checkPerceptron } from './n-perceptrons.js'
+import {
+  createBinaryData,
+  addBias,
+  getNumbersByPertentage
+} from './generate-data-functions.js'
+
+import {
+  checkThreeOnes,
+  checkMoreThanFourOnes,
+  checkLessThanFiveOnes
+} from './solutions.js'
 
 /**
  * DOM elements
@@ -13,6 +24,18 @@ const $resultWeights = document.querySelector('#result-weights')
 const $clearData = document.querySelector('#clear-data')
 const $trainPerceptron = document.querySelector('#train-perceptron')
 const $performance = document.querySelector('#performance')
+
+const $dataSize = document.querySelector('#data-size')
+const $Operation = document.querySelector('#operation')
+const $percentage = document.querySelector('#percentage')
+const $inputDataTraining = document.querySelector('#input-data-training')
+const $desiredOutputTraining = document.querySelector(
+  '#desired-output-training'
+)
+const $weightsTraining = document.querySelector('#weights-training')
+const $inputDataChecking = document.querySelector('#input-data-check')
+const $desiredOutputChecking = document.querySelector('#desired-output-check')
+const $generateData = document.querySelector('#generate-data')
 
 /**
  * Clear data event listener
@@ -59,6 +82,9 @@ const DESIRED_OUTPUT = [
   [1, 0]
 ]
 
+const DATA_LENGTH = 7
+const PERCENTAGE = 0.2
+
 /**
  * Initializes the values of the input fields with the predefined values.
  */
@@ -68,6 +94,8 @@ function initializeValues () {
   $inputData.value = VALUES.map(value => value.join(' ')).join('\n')
   $desiredOutput.value = DESIRED_OUTPUT.map(value => value.join(' ')).join('\n')
   $weights.value = WEIGHTS.map(value => value.join(' ')).join('\n')
+  $dataSize.value = DATA_LENGTH
+  $percentage.value = PERCENTAGE
 }
 
 initializeValues()
@@ -101,4 +129,46 @@ $trainPerceptron.addEventListener('click', () => {
   $output.value = output
   const t1 = performance.now() // end time
   $performance.value = `${t1 - t0} ms`
+})
+
+$generateData.addEventListener('click', () => {
+  $Operation.style.border = '1px solid #ced4da'
+  if ($Operation.value === '0') {
+    $Operation.style.border = '1px solid red'
+    return
+  }
+
+  const matrix = createBinaryData(parseInt($dataSize.value))
+  const matrixBias = addBias(matrix)
+
+  const {
+    trainingData,
+    traininDataDesiredValues,
+    testingData,
+    testingDesiredValues
+  } = getNumbersByPertentage(
+    matrixBias,
+    $Operation.value === '1'
+      ? checkThreeOnes(matrix)
+      : $Operation.value === '2'
+      ? checkMoreThanFourOnes(matrix)
+      : checkLessThanFiveOnes(matrix),
+    parseFloat($percentage.value)
+  )
+
+  $inputDataTraining.value = trainingData
+    .map(value => value.join(' '))
+    .join('\n')
+  $desiredOutputTraining.value = traininDataDesiredValues
+    .map(value => value.join(' '))
+    .join('\n')
+  $weightsTraining.value = trainingData[0].map(() => 0).join(' ')
+
+  $inputDataChecking.value = testingData
+    .map(value => value.join(' '))
+    .join('\n')
+
+  $desiredOutputChecking.value = testingDesiredValues
+    .map(value => value.join(' '))
+    .join('\n')
 })

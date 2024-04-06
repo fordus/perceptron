@@ -99,7 +99,7 @@ export function checkPerceptron (values, weights, desiredValues) {
     output =
       output +
       `Input: [${value}] Output: [${calculateOutput(value, weights).join(
-        ' '
+        ','
       )}] Desired: [${desiredValues[values.indexOf(value)].join(',')}]\n`
   })
   return output
