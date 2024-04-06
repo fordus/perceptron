@@ -133,10 +133,27 @@ $trainPerceptron.addEventListener('click', () => {
 
 $generateData.addEventListener('click', () => {
   $Operation.style.border = '1px solid #ced4da'
+  $dataSize.style.border = '1px solid #ced4da'
+  $percentage.style.border = '1px solid #ced4da'
   if ($Operation.value === '0') {
     $Operation.style.border = '1px solid red'
     return
   }
+
+  if (parseInt($dataSize.value) < 1) {
+    $dataSize.style.border = '1px solid red'
+    return
+  }
+
+  if (parseFloat($percentage.value) < 0 || parseFloat($percentage.value) > 1) {
+    $percentage.style.border = '1px solid red'
+    return
+  }
+
+  console.log('Generating data with the following parameters:')
+  console.log('Operation:', $Operation.value)
+  console.log('Data size:', $dataSize.value)
+  console.log('Percentage:', $percentage.value)
 
   const matrix = createBinaryData(parseInt($dataSize.value))
   const matrixBias = addBias(matrix)
