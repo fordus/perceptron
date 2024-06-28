@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perceptron 🧨 | Tristan Vidal</title>
+    <title>Perceptron 🧪 | Tristan Vidal</title>
     <script src="https://cdn.tailwindcss.com"></script>
      <link rel="icon" type="image/x-icon" href="https://jidef.github.io/favicon/favicon.ico">
   </head>
@@ -14,7 +14,7 @@
         <h1
           class="text-3xl font-bold leading-tight tracking-tighter text-center sm:text-left md:text-6xl lg:leading-[1.1]"
         >
-          Perceptrón 🧨
+          Perceptrón 🧪
         </h1>
       </section>
       <div class="grid gap-4 pt-2 pb-12">
@@ -27,16 +27,16 @@
             <div class="flex flex-col space-y-1.5 p-6 pb-3">
               <div class="flex flex-col pt-2 pb-3 space-y-1 col-span-2">
                 <h3 class="font-semibold tracking-tight text-2xl">
-                  Generar datos prueba
+                  Generate data
                 </h3>
-                <p class="text-sm text-muted-foreground">Rellena los campos</p>
+                <p class="text-sm text-muted-foreground">Fill the data</p>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div class="grid gap-1">
                   <label
                     class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="data-size"
-                    >Tamaño de datos (2^x)</label
+                    >Data size (2^x)</label
                   >
                   <input
                     required
@@ -48,23 +48,23 @@
                   <label
                     class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="operation"
-                    >Operación</label
+                    >Operation</label
                   >
                   <select
                     id="operation"
                     class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
                   >
-                    <option value="0">Ninguna</option>
-                    <option value="1" selected>Exactamente tres unos</option>
-                    <option value="2">Más de cuatro unos</option>
-                    <option value="3">Menos de cinco unos</option>
+                    <option value="0">None</option>
+                    <option value="1">Exactly three ones</option>
+                    <option value="2">More than four ones</option>
+                    <option value="3">Less than five ones</option>
                   </select>
                 </div>
                 <div class="grid gap-1">
                   <label
                     class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="percentage"
-                    >Porcentaje para datos</label
+                    >Data percentage</label
                   >
                   <input
                     required
@@ -80,14 +80,14 @@
                     class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black text-white shadow hover:bg-black/90 h-9 px-4 py-2 w-full"
                     id="generate-data"
                   >
-                    Generar datos
+                    Generate
                   </button>
                 </div>
               </div>
 
               <div class="flex flex-col pt-3 space-y-1 col-span-2">
                 <h3 class="font-semibold tracking-tight text-xl">
-                  Datos de entrenamiento
+                  Training data
                 </h3>
               </div>
 
@@ -111,7 +111,7 @@
                         d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
                       ></path>
                       <path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg
-                    >Datos de entrada</span
+                    >Entry data</span
                   >
                   <textarea
                     readonly
@@ -139,7 +139,7 @@
                       <rect width="20" height="5" x="2" y="3" rx="1"></rect>
                       <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path>
                       <path d="M10 12h4"></path></svg
-                    >Valores deseados</span
+                    >Desired values</span
                   >
                   <textarea
                     readonly
@@ -167,7 +167,7 @@
                       <circle cx="12" cy="12" r="10"></circle>
                       <line x1="12" x2="12" y1="8" y2="12"></line>
                       <line x1="12" x2="12.01" y1="16" y2="16"></line></svg
-                    >Pesos</span
+                    >Weights</span
                   >
                   <textarea
                     readonly
@@ -180,7 +180,7 @@
 
               <div class="flex flex-col pt-3 space-y-1 col-span-2">
                 <h3 class="font-semibold tracking-tight text-xl">
-                  Datos para comprobación
+                  Check data
                 </h3>
               </div>
 
@@ -204,7 +204,7 @@
                         d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
                       ></path>
                       <path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg
-                    >Datos de entrada</span
+                    >Entry data</span
                   >
                   <textarea
                     readonly
@@ -232,7 +232,7 @@
                       <rect width="20" height="5" x="2" y="3" rx="1"></rect>
                       <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path>
                       <path d="M10 12h4"></path></svg
-                    >Valores deseados</span
+                    >Desired values</span
                   >
                   <textarea
                     readonly
@@ -250,10 +250,10 @@
               <div class="grid grid-cols-3 gap-4 pt-2">
                 <div class="flex flex-col pt-2 pb-3 space-y-1 col-span-2">
                   <h3 class="font-semibold tracking-tight text-2xl">
-                    Entrenar perceptrón
+                   Train the perceptron
                   </h3>
                   <p class="text-sm text-muted-foreground">
-                    Rellena los datos de entrenamiento
+                    Fill the data and train the perceptron
                   </p>
                 </div>
 
@@ -276,7 +276,7 @@
                   <label
                     class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="epochs"
-                    >Épocas</label
+                    >Epochs</label
                   >
                   <input
                     required
@@ -288,7 +288,7 @@
                   <label
                     class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     for="learning-rate"
-                    >Tasa de aprendizaje</label
+                    >Learning rate</label
                   >
                   <input
                     required
@@ -318,7 +318,7 @@
                         d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
                       ></path>
                       <path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg
-                    >Datos de entrada</span
+                    >Entry data</span
                   >
                   <textarea
                     required
@@ -345,7 +345,7 @@
                       <rect width="20" height="5" x="2" y="3" rx="1"></rect>
                       <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path>
                       <path d="M10 12h4"></path></svg
-                    >Valores deseados</span
+                    >Desired values</span
                   >
                   <textarea
                     required
@@ -372,7 +372,7 @@
                       <circle cx="12" cy="12" r="10"></circle>
                       <line x1="12" x2="12" y1="8" y2="12"></line>
                       <line x1="12" x2="12.01" y1="16" y2="16"></line></svg
-                    >Pesos</span
+                    >Weights</span
                   >
                   <textarea
                     rows="10"
@@ -388,7 +388,7 @@
                     class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 w-full"
                     id="clear-data"
                   >
-                    Limpiar
+                    Clear data
                   </button>
                 </div>
                 <div class="flex items-center pt-0">
@@ -396,7 +396,7 @@
                     class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black text-white shadow hover:bg-black/90 h-9 px-4 py-2 w-full"
                     id="train-perceptron"
                   >
-                    Entrenar
+                    Train
                   </button>
                 </div>
               </div>
@@ -414,7 +414,7 @@
                     class="h-4 w-4 text-muted-foreground mr-2"
                   >
                     <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg
-                  >Tiempo de entrenamiento</span
+                  >Performance</span
                 >
                 <input
                   required
@@ -440,7 +440,7 @@
                     <rect width="7" height="7" x="14" y="3" rx="1"></rect>
                     <rect width="7" height="7" x="14" y="14" rx="1"></rect>
                     <rect width="7" height="7" x="3" y="14" rx="1"></rect></svg
-                  >Comprobación de resultados</span
+                  >Output</span
                 >
                 <textarea
                   readonly
@@ -470,7 +470,7 @@
                     <path
                       d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
                     ></path></svg
-                  >Pesos resultantes</span
+                  >Weights</span
                 >
                 <textarea
                   readonly
